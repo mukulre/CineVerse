@@ -12,15 +12,19 @@ const Login = () => {
           <input type="text" placeholder='Your Name' />
           <input type="email" placeholder='Email' />
           <input type="password" placeholder='Password' />
-          <button>Sign Up</button>
-          <div className="form-help">
-            <div className="remember">
-              <input type="checkbox" />
-              <label htmlFor="">Remember Me</label>
+          <button className='signup-btn'>Sign Up</button>
+           <div className="options">
+            <label>
+              <input type="checkbox" className="remember-checkbox" />
+              Remember Me
+            </label>
+            <a href="#">Need Help?</a>
             </div>
-            <p>Need Help?</p>
-          </div>
         </form>
+        <div className="bottom-text">
+          <p>New to Netflix? <a href='#'>Sign Up</a></p>
+          <p>Already have an account? <a href='#'>Sign In</a></p>
+        </div>
       </div>
     </div>
   )
