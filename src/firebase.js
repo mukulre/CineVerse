@@ -1,9 +1,10 @@
 import { initializeApp } from "firebase/app";
 import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
+import { toast } from "react-toastify";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDXssE52Q3u1nTXWmKfguosw8dRfyy8TLw",
+  apiKey: "AIzaSyDd_Sfg6pGCJJTP8hiaRDlrPD3DfRboCaY",
   authDomain: "netflix-clone-9e2ad.firebaseapp.com",
   projectId: "netflix-clone-9e2ad",
   storageBucket: "netflix-clone-9e2ad.firebasestorage.app",
@@ -28,7 +29,7 @@ const signup=async(name,email,password)=>{
         });
     } catch(error){
         console.log(error);
-        alert(error);
+        toast.error(error.code.split('/')[1].split('-').join(" "));
     }
 }
 
@@ -37,7 +38,7 @@ const login=async(email,password)=>{
         await signInWithEmailAndPassword(auth,email,password);
     } catch(error){
         console.log(error);
-        alert(error);
+        toast.error(error.code.split('/')[1].split('-').join(" "));
     }
 }
 
